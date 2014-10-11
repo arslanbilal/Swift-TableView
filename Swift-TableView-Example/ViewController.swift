@@ -55,6 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         var cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         if cell.accessoryType == UITableViewCellAccessoryType.Checkmark {
