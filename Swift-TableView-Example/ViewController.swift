@@ -55,8 +55,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)")
+        let alert: UIAlertView = UIAlertView(title: "Message", message: recipes[indexPath.row], delegate: nil, cancelButtonTitle: "OKAY")
+        alert.show()
     }
     
+
 }
 
