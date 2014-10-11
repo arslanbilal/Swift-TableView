@@ -28,6 +28,7 @@
 		77B85BD719E99A7B005CB58F /* thai_shrimp_cake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77B85BC719E99A7B005CB58F /* thai_shrimp_cake.jpg */; };
 		77B85BD819E99A7B005CB58F /* vegetable_curry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77B85BC819E99A7B005CB58F /* vegetable_curry.jpg */; };
 		77B85BD919E99A7B005CB58F /* white_chocolate_donut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77B85BC919E99A7B005CB58F /* white_chocolate_donut.jpg */; };
+		77B85BDD19E99C6E005CB58F /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B85BDC19E99C6E005CB58F /* TableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		77B85BC719E99A7B005CB58F /* thai_shrimp_cake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = thai_shrimp_cake.jpg; path = Images/thai_shrimp_cake.jpg; sourceTree = "<group>"; };
 		77B85BC819E99A7B005CB58F /* vegetable_curry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vegetable_curry.jpg; path = Images/vegetable_curry.jpg; sourceTree = "<group>"; };
 		77B85BC919E99A7B005CB58F /* white_chocolate_donut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = white_chocolate_donut.jpg; path = Images/white_chocolate_donut.jpg; sourceTree = "<group>"; };
+		77B85BDC19E99C6E005CB58F /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				7761236819E8B91900EA359D /* AppDelegate.swift */,
 				7761236A19E8B91900EA359D /* ViewController.swift */,
 				7761236C19E8B91900EA359D /* Main.storyboard */,
+				77B85BDC19E99C6E005CB58F /* TableCell.swift */,
 				7761236F19E8B91900EA359D /* Images.xcassets */,
 				7761236619E8B91900EA359D /* Supporting Files */,
 			);
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B85BDD19E99C6E005CB58F /* TableCell.swift in Sources */,
 				7761236B19E8B91900EA359D /* ViewController.swift in Sources */,
 				7761236919E8B91900EA359D /* AppDelegate.swift in Sources */,
 			);
