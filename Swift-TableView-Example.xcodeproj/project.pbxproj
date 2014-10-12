@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771ED63E19E9EF87002F3A01 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771ED63D19E9EF87002F3A01 /* DetailViewController.swift */; };
 		7761236919E8B91900EA359D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761236819E8B91900EA359D /* AppDelegate.swift */; };
 		7761236B19E8B91900EA359D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761236A19E8B91900EA359D /* ViewController.swift */; };
 		7761236E19E8B91900EA359D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7761236C19E8B91900EA359D /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		771ED63D19E9EF87002F3A01 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7761236319E8B91900EA359D /* Swift-TableView-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-TableView-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7761236719E8B91900EA359D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7761236819E8B91900EA359D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,10 +111,10 @@
 		7761236519E8B91900EA359D /* Swift-TableView-Example */ = {
 			isa = PBXGroup;
 			children = (
-				7761236819E8B91900EA359D /* AppDelegate.swift */,
-				7761236A19E8B91900EA359D /* ViewController.swift */,
 				7761236C19E8B91900EA359D /* Main.storyboard */,
+				7761236A19E8B91900EA359D /* ViewController.swift */,
 				77B85BDC19E99C6E005CB58F /* TableCell.swift */,
+				771ED63D19E9EF87002F3A01 /* DetailViewController.swift */,
 				7761236F19E8B91900EA359D /* Images.xcassets */,
 				7761236619E8B91900EA359D /* Supporting Files */,
 			);
@@ -122,6 +124,7 @@
 		7761236619E8B91900EA359D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7761236819E8B91900EA359D /* AppDelegate.swift */,
 				77B85B9919E98869005CB58F /* Images */,
 				7761236719E8B91900EA359D /* Info.plist */,
 			);
@@ -286,6 +289,7 @@
 				77B85BDD19E99C6E005CB58F /* TableCell.swift in Sources */,
 				7761236B19E8B91900EA359D /* ViewController.swift in Sources */,
 				7761236919E8B91900EA359D /* AppDelegate.swift in Sources */,
+				771ED63E19E9EF87002F3A01 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

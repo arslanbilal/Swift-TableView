@@ -55,20 +55,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return 78.0
-    }    
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        var cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        if cell.accessoryType == UITableViewCellAccessoryType.Checkmark {
-            cell.accessoryType = UITableViewCellAccessoryType.None
-        } else {
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-        }
-        
-        //let alert: UIAlertView = UIAlertView(title: "Message", message: recipes[indexPath.row], delegate: nil, cancelButtonTitle: "OKAY")
-        //alert.show()
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -81,5 +67,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "recipeDetail" {
+            let index = self.tableView?.indexPathForSelectedRow()
+            var destinationViewController: DetailViewController = segue.destinationViewController as DetailViewController
+            
+            destinationViewController.prepString = prepTime[index!.row]
+            destinationViewController.nameString = recipes[index!.row]
+            destinationViewController.imageName = thumbnails[index!.row]
+        }
+    }
+    
+    
+    
+        func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    //        var cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+    //        if cell.accessoryType == UITableViewCellAccessoryType.Checkmark {
+    //            cell.accessoryType = UITableViewCellAccessoryType.None
+    //        } else {
+    //            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+    //        }
+    //        //let alert: UIAlertView = UIAlertView(title: "Message", message: recipes[indexPath.row], delegate: nil, cancelButtonTitle: "OKAY")
+    //        //alert.show()
+    }
 }
 
