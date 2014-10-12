@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Saq-Mc-XsT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="807-E9-aYo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
@@ -76,7 +76,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1131" y="426"/>
+            <point key="canvasLocation" x="1943" y="426"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zmz-Ao-Hek">
+            <objects>
+                <navigationController id="h9x-nA-VzC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="Qqh-WV-UKO"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
+                        <size key="portraitSize" width="320" height="568"/>
+                        <size key="landscapeSize" width="568" height="320"/>
+                    </simulatedScreenMetrics>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9GT-Sj-04l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ops-A6-MMD" kind="relationship" relationship="rootViewController" id="Pmt-xp-GfA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oqr-Jf-YPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1491" y="1157"/>
+        </scene>
+        <!--More-->
+        <scene sceneID="tWP-aL-pfZ">
+            <objects>
+                <viewController id="Ops-A6-MMD" customClass="MoreViewController" customModule="Swift_TableView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jdd-yw-kHe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iq4-sK-fz8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vyi-Ia-fPz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rex-vl-mqL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="More" id="CGg-Tl-M8p"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
+                        <size key="portraitSize" width="320" height="568"/>
+                        <size key="landscapeSize" width="568" height="320"/>
+                    </simulatedScreenMetrics>
+                    <connections>
+                        <outlet property="webView" destination="Rex-vl-mqL" id="Vrp-gg-QKx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8gP-My-AOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1943" y="1157"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="BB6-3s-1Wq">
@@ -128,12 +183,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeS-2d-P7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1577" y="426"/>
+            <point key="canvasLocation" x="2389" y="426"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mpe-Km-DP1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Saq-Mc-XsT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="p6O-iP-YJg"/>
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
@@ -151,7 +207,31 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlW-1A-X0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="426"/>
+            <point key="canvasLocation" x="1491" y="426"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="gJY-uk-ija">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="807-E9-aYo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
+                        <size key="portraitSize" width="320" height="568"/>
+                        <size key="landscapeSize" width="568" height="320"/>
+                    </simulatedScreenMetrics>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="aOE-f0-qnF">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Saq-Mc-XsT" kind="relationship" relationship="viewControllers" id="SMt-oS-rnj"/>
+                        <segue destination="h9x-nA-VzC" kind="relationship" relationship="viewControllers" id="ejp-yZ-Ica"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5fY-jl-OzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="855" y="774"/>
         </scene>
     </scenes>
 </document>

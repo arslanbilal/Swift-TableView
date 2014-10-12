@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		771ED63E19E9EF87002F3A01 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771ED63D19E9EF87002F3A01 /* DetailViewController.swift */; };
+		77327A2919EA812B0054ED2B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77327A2819EA812B0054ED2B /* MoreViewController.swift */; };
 		7761236919E8B91900EA359D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761236819E8B91900EA359D /* AppDelegate.swift */; };
 		7761236B19E8B91900EA359D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761236A19E8B91900EA359D /* ViewController.swift */; };
 		7761236E19E8B91900EA359D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7761236C19E8B91900EA359D /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		771ED63D19E9EF87002F3A01 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		77327A2819EA812B0054ED2B /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		7761236319E8B91900EA359D /* Swift-TableView-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-TableView-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7761236719E8B91900EA359D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7761236819E8B91900EA359D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				7761236A19E8B91900EA359D /* ViewController.swift */,
 				77B85BDC19E99C6E005CB58F /* TableCell.swift */,
 				771ED63D19E9EF87002F3A01 /* DetailViewController.swift */,
+				77327A2819EA812B0054ED2B /* MoreViewController.swift */,
 				7761236F19E8B91900EA359D /* Images.xcassets */,
 				7761236619E8B91900EA359D /* Supporting Files */,
 			);
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77327A2919EA812B0054ED2B /* MoreViewController.swift in Sources */,
 				77B85BDD19E99C6E005CB58F /* TableCell.swift in Sources */,
 				7761236B19E8B91900EA359D /* ViewController.swift in Sources */,
 				7761236919E8B91900EA359D /* AppDelegate.swift in Sources */,
