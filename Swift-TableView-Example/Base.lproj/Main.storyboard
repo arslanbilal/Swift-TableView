@@ -71,10 +71,19 @@
                         <size key="landscapeSize" width="568" height="320"/>
                     </simulatedScreenMetrics>
                     <connections>
+                        <outlet property="searchDisplayController" destination="No0-XF-1zs" id="boN-ZX-czt"/>
                         <outlet property="tableView" destination="FmU-74-aFa" id="XiT-s1-mwA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="No0-XF-1zs">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="ujV-AS-SAI"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="0xh-BW-VlJ"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="vAe-qe-JVu"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="Ucf-2l-xcS"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1943" y="426"/>
         </scene>
