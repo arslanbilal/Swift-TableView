@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         navigationItem.title = "Recipes"
         
         initializeTheRecipes()
+        tableView?.reloadData()
     }
    
     override func didReceiveMemoryWarning() {
@@ -76,39 +77,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
         return 78.0
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        recipes.removeAtIndex(indexPath.row)
-        
-        tableView.reloadData()
-        
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            recipes.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "recipeDetail" {
-            let index = self.tableView?.indexPathForSelectedRow()
-            var destinationViewController: DetailViewController = segue.destinationViewController as DetailViewController
+            let indexPath = self.tableView!.indexPathForSelectedRow
+            let destinationViewController: DetailViewController = segue.destinationViewController as! DetailViewController
             
-            destinationViewController.prepString = recipes[index!.row].prepTime
-            destinationViewController.nameString = recipes[index!.row].name
-            destinationViewController.imageName = recipes[index!.row].thumbnails
+            destinationViewController.prepString = recipes[indexPath()!.row].prepTime
+            destinationViewController.nameString = recipes[indexPath()!.row].name
+            destinationViewController.imageName = recipes[indexPath()!.row].thumbnails
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    //        var cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-    //        if cell.accessoryType == UITableViewCellAccessoryType.Checkmark {
-    //            cell.accessoryType = UITableViewCellAccessoryType.None
-    //        } else {
-    //            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-    //        }
-    //        //let alert: UIAlertView = UIAlertView(title: "Message", message: recipes[indexPath.row], delegate: nil, cancelButtonTitle: "OKAY")
-    //        //alert.show()
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     
