@@ -15,7 +15,7 @@ class MoreViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        let url: NSURL = NSURL(string: "https://github.com/ArslanBilal")!
+        let url: NSURL = NSURL(string: "https://github.com/arslanbilal")!
         let urlRequest: NSURLRequest = NSURLRequest(URL: url)
         webView!.loadRequest(urlRequest)
     }

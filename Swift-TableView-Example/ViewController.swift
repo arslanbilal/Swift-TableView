@@ -11,29 +11,15 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableView: UITableView?
     
-//    internal struct Recipe {
-//        let name: String
-//        let thumbnails: String
-//        let prepTime: String
-//    }
     var recipes = [Recipe]()
-    
-    
- 
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         navigationItem.title = "Recipes"
-        
         initializeTheRecipes()
-        tableView?.reloadData()
-    }
-   
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
     }
     
     func initializeTheRecipes() {
@@ -53,8 +39,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             Recipe(name: "Thai Shrimp Cake", thumbnails: "thai_shrimp_cake.jpg", prepTime: "1.5 hour"),
             Recipe(name: "Angry Birds Cake", thumbnails: "angry_birds_cake.jpg", prepTime: "2 hour"),
             Recipe(name: "Ham and Cheese Panini", thumbnails: "ham_and_cheese_panini.jpg", prepTime: "35 min")]
+        
+        self.tableView?.reloadData()
     }
     
+    // MARK: - UITableView DataSource Methods
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identifier: String = "tableCell"
 
@@ -81,12 +70,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if editingStyle == UITableViewCellEditingStyle.Delete {
             recipes.removeAtIndex(indexPath.row)
-            self.tableView!.reloadData()
-            self.tableView!.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
+            self.tableView?.reloadData()
+            self.tableView?.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
         
         }
     }
-
+    
+    //MARK: - UITableView Delegate Method
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "recipeDetail" {
             let indexPath = self.tableView!.indexPathForSelectedRow
@@ -97,10 +91,4 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             destinationViewController.imageName = recipes[indexPath()!.row].thumbnails
         }
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-
-    
 }
