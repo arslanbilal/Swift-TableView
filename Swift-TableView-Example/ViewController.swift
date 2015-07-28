@@ -11,11 +11,11 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableView: UITableView?
     
-    struct Recipe {
-        let name: String
-        let thumbnails: String
-        let prepTime: String
-    }
+//    internal struct Recipe {
+//        let name: String
+//        let thumbnails: String
+//        let prepTime: String
+//    }
     var recipes = [Recipe]()
     
     
@@ -64,10 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell = TableCell(style: UITableViewCellStyle.Value1, reuseIdentifier: identifier)
         }
         
-        //cell!.backgroundColor = UIColor.orangeColor()
-        cell!.nameLabel!.text = recipes[indexPath.row].name
-        cell!.thumbnailImageView!.image = UIImage(named:recipes[indexPath.row].thumbnails)
-        cell!.prepTimeLabel!.text = recipes[indexPath.row].prepTime
+        cell.configurateTheCell(recipes[indexPath.row])
         
         return cell!
     }
@@ -84,7 +81,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if editingStyle == UITableViewCellEditingStyle.Delete {
             recipes.removeAtIndex(indexPath.row)
-            tableView.reloadData()
+            self.tableView!.reloadData()
+            self.tableView!.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
+        
         }
     }
 

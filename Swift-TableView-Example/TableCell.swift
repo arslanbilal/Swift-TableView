@@ -15,4 +15,10 @@ class TableCell : UITableViewCell {
     @IBOutlet var prepTimeLabel: UILabel?
     @IBOutlet var thumbnailImageView: UIImageView?
     
+    func configurateTheCell(recipe: Recipe) {
+        self.nameLabel?.text = recipe.name
+        self.prepTimeLabel?.text = recipe.prepTime
+        self.thumbnailImageView?.image = UIImage(named: recipe.thumbnails)
+    }
+    
 }
