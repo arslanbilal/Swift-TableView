@@ -9,16 +9,18 @@
 import Foundation
 import UIKit
 
+
 class TableCell : UITableViewCell {
     
     @IBOutlet var nameLabel: UILabel?
     @IBOutlet var prepTimeLabel: UILabel?
     @IBOutlet var thumbnailImageView: UIImageView?
     
+    
+    // MARK: Cell Configuration
     func configurateTheCell(recipe: Recipe) {
         self.nameLabel?.text = recipe.name
-        self.prepTimeLabel?.text = recipe.prepTime
+        self.prepTimeLabel?.text = "Prep Time: " + recipe.prepTime
         self.thumbnailImageView?.image = UIImage(named: recipe.thumbnails)
     }
-    
 }

@@ -9,14 +9,13 @@
 import Foundation
 import UIKit
 
+
 class MoreViewController: UIViewController {
     
     @IBOutlet var webView: UIWebView?
     
     override func viewDidLoad() {
-        
         let url: NSURL = NSURL(string: "https://github.com/arslanbilal")!
-        let urlRequest: NSURLRequest = NSURLRequest(URL: url)
-        webView!.loadRequest(urlRequest)
+        webView!.loadRequest(NSURLRequest(URL: url))
     }
 }

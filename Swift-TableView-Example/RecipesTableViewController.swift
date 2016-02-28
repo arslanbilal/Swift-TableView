@@ -1,22 +1,25 @@
 //
-//  ViewController.swift
+//  RecipesTableViewController.swift
 //  Swift-TableView-Example
 //
-//  Created by Bilal ARSLAN on 11/10/14.
-//  Copyright (c) 2014 Bilal ARSLAN. All rights reserved.
+//  Created by Bilal Arslan on 28/02/16.
+//  Copyright © 2016 Bilal ARSLAN. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet var tableView: UITableView?
-    
+struct Recipe {
+    let name: String
+    let thumbnails: String
+    let prepTime: String
+}
+
+class RecipesTableViewController: UITableViewController {
     var recipes = [Recipe]()
-
-
+    let identifier: String = "tableCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         navigationItem.title = "Recipes"
         initializeTheRecipes()
@@ -40,55 +43,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             Recipe(name: "Angry Birds Cake", thumbnails: "angry_birds_cake.jpg", prepTime: "2 hour"),
             Recipe(name: "Ham and Cheese Panini", thumbnails: "ham_and_cheese_panini.jpg", prepTime: "35 min")]
         
-        self.tableView?.reloadData()
+        self.tableView.reloadData()
     }
     
-    // MARK: - UITableView DataSource Methods
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let identifier: String = "tableCell"
-
-        var cell: TableCell! = tableView.dequeueReusableCellWithIdentifier(identifier) as? TableCell
-        
-        if cell == nil {
-            cell = TableCell(style: UITableViewCellStyle.Value1, reuseIdentifier: identifier)
-        }
-        
+    // MARK: - UITableView DataSource
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: TableCell! = tableView.dequeueReusableCellWithIdentifier(identifier) as? TableCell
         cell.configurateTheCell(recipes[indexPath.row])
         
         return cell!
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 78.0
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50.0
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             recipes.removeAtIndex(indexPath.row)
             self.tableView?.reloadData()
-            self.tableView?.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
-        
+            self.tableView?.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
         }
     }
     
-    //MARK: - UITableView Delegate Method
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    //MARK: - UITableView Delegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    // MARK: Segue Method
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "recipeDetail" {
             let indexPath = self.tableView!.indexPathForSelectedRow
             let destinationViewController: DetailViewController = segue.destinationViewController as! DetailViewController
             
-            destinationViewController.prepString = recipes[indexPath()!.row].prepTime
-            destinationViewController.nameString = recipes[indexPath()!.row].name
-            destinationViewController.imageName = recipes[indexPath()!.row].thumbnails
+            destinationViewController.recipe = recipes[indexPath!.row]
         }
     }
 }
