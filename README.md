@@ -4,8 +4,8 @@ Swift-TableView-Example
 Simple UITableView application on Swift(2.2) Language. Custom Cell and Struct used.
 <hr>
 #####Requirements
-Xcode: => 7.2 <br>
-iOS: => 8.0 <br>
+<b>Xcode:</b> >= 7.3.1 <br>
+<b>iOS:</b> >= 8.0 <br>
 <hr>
 #####Screenshots of App
 <img src="https://github.com/arslanbilal/Swift-TableView-Example/raw/master/Swift-TableView-Example/Screen%20Captures/img1.png" height="337" width="225">&nbsp;
