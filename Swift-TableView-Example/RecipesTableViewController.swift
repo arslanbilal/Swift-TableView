@@ -20,7 +20,7 @@ class RecipesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
         navigationItem.title = "Recipes"
         initializeTheRecipes()
     }
@@ -46,41 +46,29 @@ class RecipesTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    // MARK: - UITableView DataSource
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: TableCell! = tableView.dequeueReusableCellWithIdentifier(identifier) as? TableCell
+    // MARK: UITableView DataSource
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: TableCell! = tableView.dequeueReusableCell(withIdentifier: identifier) as? TableCell
         cell.configurateTheCell(recipes[indexPath.row])
-        
         return cell!
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 50.0
-    }
-    
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            recipes.removeAtIndex(indexPath.row)
-            self.tableView?.reloadData()
-            self.tableView?.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            recipes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .bottom)
         }
     }
     
-    //MARK: - UITableView Delegate
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-    
     // MARK: Segue Method
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "recipeDetail" {
             let indexPath = self.tableView!.indexPathForSelectedRow
-            let destinationViewController: DetailViewController = segue.destinationViewController as! DetailViewController
-            
+            let destinationViewController: DetailViewController = segue.destination as! DetailViewController
             destinationViewController.recipe = recipes[indexPath!.row]
         }
     }

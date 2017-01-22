@@ -18,7 +18,7 @@ class TableCell : UITableViewCell {
     
     
     // MARK: Cell Configuration
-    func configurateTheCell(recipe: Recipe) {
+    func configurateTheCell(_ recipe: Recipe) {
         self.nameLabel?.text = recipe.name
         self.prepTimeLabel?.text = "Prep Time: " + recipe.prepTime
         self.thumbnailImageView?.image = UIImage(named: recipe.thumbnails)

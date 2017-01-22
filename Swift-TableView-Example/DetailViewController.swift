@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 class DetailViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView?
@@ -21,7 +20,6 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = recipe?.name
-        
         imageView?.image = UIImage(named: recipe!.thumbnails)
         nameLabel?.text = recipe!.name
         prepTime?.text = "Prep Time: " + recipe!.prepTime
