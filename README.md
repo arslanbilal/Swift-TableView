@@ -3,7 +3,7 @@
 Simple `UITableView` application on Swift(4) Language.
 
 ## Requirements
-- Xcode 8+
+- Xcode 9+
 - iOS 10+
 - Swift Lint
 
