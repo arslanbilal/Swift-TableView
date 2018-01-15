@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class MoreViewController: UIViewController {
-    
+
     @IBOutlet var webView: UIWebView?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
