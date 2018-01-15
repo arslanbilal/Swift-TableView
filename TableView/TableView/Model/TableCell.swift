@@ -9,14 +9,12 @@
 import Foundation
 import UIKit
 
+class TableCell: UITableViewCell {
 
-class TableCell : UITableViewCell {
-    
     @IBOutlet var nameLabel: UILabel?
     @IBOutlet var prepTimeLabel: UILabel?
     @IBOutlet var thumbnailImageView: UIImageView?
-    
-    
+
     // MARK: Cell Configuration
     func configurateTheCell(_ recipe: Recipe) {
         self.nameLabel?.text = recipe.name
