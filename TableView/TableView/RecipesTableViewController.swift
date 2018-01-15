@@ -66,10 +66,10 @@ class RecipesTableViewController: UITableViewController {
 
     // MARK: Segue Method
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "recipeDetail" {
-            let indexPath = self.tableView!.indexPathForSelectedRow
-            let destinationViewController: DetailViewController = segue.destination as! DetailViewController
-            destinationViewController.recipe = recipes[indexPath!.row]
+        if segue.identifier == "recipeDetail",
+            let indexPath = self.tableView?.indexPathForSelectedRow,
+            let destinationViewController: DetailViewController = segue.destination as? DetailViewController {
+            destinationViewController.recipe = recipes[indexPath.row]
         }
     }
 }
