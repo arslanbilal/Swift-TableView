@@ -48,9 +48,11 @@ class RecipesTableViewController: UITableViewController {
 
     // MARK: UITableView DataSource
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: TableCell! = tableView.dequeueReusableCell(withIdentifier: identifier) as? TableCell
-        cell.configurateTheCell(recipes[indexPath.row])
-        return cell!
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? TableCell {
+            cell.configurateTheCell(recipes[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

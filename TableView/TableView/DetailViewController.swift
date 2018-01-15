@@ -11,17 +11,17 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet var imageView: UIImageView?
-    @IBOutlet var nameLabel: UILabel?
-    @IBOutlet var prepTime: UILabel?
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var prepTime: UILabel!
 
     var recipe: Recipe?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = recipe?.name
-        imageView?.image = UIImage(named: recipe!.thumbnails)
-        nameLabel?.text = recipe!.name
-        prepTime?.text = "Prep Time: " + recipe!.prepTime
+        imageView.image = UIImage(named: recipe!.thumbnails)
+        nameLabel.text = recipe!.name
+        prepTime.text = "Prep Time: " + recipe!.prepTime
     }
 }
