@@ -17,14 +17,14 @@ struct Recipe {
 class RecipesTableViewController: UITableViewController {
     var recipes = [Recipe]()
     let identifier: String = "tableCell"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
         navigationItem.title = "Recipes"
         initializeTheRecipes()
     }
-    
+
     func initializeTheRecipes() {
         self.recipes = [Recipe(name: "Egg Benedict", thumbnails: "egg_benedict.jpg", prepTime: "1 hour"),
                         Recipe(name: "Mushroom Risotto", thumbnails: "mushroom_risotto.jpg", prepTime: "30 min"),
@@ -42,34 +42,36 @@ class RecipesTableViewController: UITableViewController {
                         Recipe(name: "Thai Shrimp Cake", thumbnails: "thai_shrimp_cake.jpg", prepTime: "1.5 hour"),
                         Recipe(name: "Angry Birds Cake", thumbnails: "angry_birds_cake.jpg", prepTime: "2 hour"),
                         Recipe(name: "Ham and Cheese Panini", thumbnails: "ham_and_cheese_panini.jpg", prepTime: "35 min")]
-        
+
         self.tableView.reloadData()
     }
-    
+
     // MARK: UITableView DataSource
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: TableCell! = tableView.dequeueReusableCell(withIdentifier: identifier) as? TableCell
-        cell.configurateTheCell(recipes[indexPath.row])
-        return cell!
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? TableCell {
+            cell.configurateTheCell(recipes[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count
     }
-    
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             recipes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
         }
     }
-    
+
     // MARK: Segue Method
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "recipeDetail" {
-            let indexPath = self.tableView!.indexPathForSelectedRow
-            let destinationViewController: DetailViewController = segue.destination as! DetailViewController
-            destinationViewController.recipe = recipes[indexPath!.row]
+        if segue.identifier == "recipeDetail",
+            let indexPath = self.tableView?.indexPathForSelectedRow,
+            let destinationViewController: DetailViewController = segue.destination as? DetailViewController {
+            destinationViewController.recipe = recipes[indexPath.row]
         }
     }
 }
