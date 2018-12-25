@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C8E332921D276CA009CBC9D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8E332821D276CA009CBC9D /* Recipe.swift */; };
 		771637C31C832B18003AF113 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771637C21C832B18003AF113 /* RecipesTableViewController.swift */; };
 		771ED63E19E9EF87002F3A01 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771ED63D19E9EF87002F3A01 /* DetailViewController.swift */; };
 		77327A2919EA812B0054ED2B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77327A2819EA812B0054ED2B /* MoreViewController.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C8E332821D276CA009CBC9D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		771637C21C832B18003AF113 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		771ED63D19E9EF87002F3A01 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		77327A2819EA812B0054ED2B /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
@@ -94,12 +96,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		770D5F621B6775C90012AB79 /* Model */ = {
+		0C8E332721D27691009CBC9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C8E332821D276CA009CBC9D /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		770D5F621B6775C90012AB79 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				77B85BDC19E99C6E005CB58F /* TableCell.swift */,
 			);
-			path = Model;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7761235A19E8B91800EA359D = {
@@ -123,12 +133,13 @@
 		7761236519E8B91900EA359D /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				7761236C19E8B91900EA359D /* Main.storyboard */,
+				7761236819E8B91900EA359D /* AppDelegate.swift */,
 				771ED63D19E9EF87002F3A01 /* DetailViewController.swift */,
 				77327A2819EA812B0054ED2B /* MoreViewController.swift */,
 				771637C21C832B18003AF113 /* RecipesTableViewController.swift */,
-				770D5F621B6775C90012AB79 /* Model */,
+				0C8E332721D27691009CBC9D /* Model */,
 				7761236619E8B91900EA359D /* Supporting Files */,
+				770D5F621B6775C90012AB79 /* Views */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -137,10 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				77B85B9919E98869005CB58F /* Images */,
-				7761236819E8B91900EA359D /* AppDelegate.swift */,
 				7761236F19E8B91900EA359D /* Images.xcassets */,
 				7761236719E8B91900EA359D /* Info.plist */,
 				777ED0651D6D04E700BE808E /* LaunchScreen.storyboard */,
+				7761236C19E8B91900EA359D /* Main.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -195,7 +206,6 @@
 				7761235F19E8B91800EA359D /* Sources */,
 				7761236019E8B91800EA359D /* Frameworks */,
 				7761236119E8B91800EA359D /* Resources */,
-				771F356C200CBAFE00702F00 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -231,17 +241,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Bilal ARSLAN";
 				TargetAttributes = {
 					7761236219E8B91800EA359D = {
 						CreatedOnToolsVersion = 6.0;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 					};
 					7761237419E8B91900EA359D = {
 						CreatedOnToolsVersion = 6.0;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 						TestTargetID = 7761236219E8B91800EA359D;
 					};
@@ -302,23 +312,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		771F356C200CBAFE00702F00 /* Swift Lint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Lint";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		7761235F19E8B91800EA359D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -327,6 +320,7 @@
 				77327A2919EA812B0054ED2B /* MoreViewController.swift in Sources */,
 				77B85BDD19E99C6E005CB58F /* TableCell.swift in Sources */,
 				7761236919E8B91900EA359D /* AppDelegate.swift in Sources */,
+				0C8E332921D276CA009CBC9D /* Recipe.swift in Sources */,
 				771637C31C832B18003AF113 /* RecipesTableViewController.swift in Sources */,
 				771ED63E19E9EF87002F3A01 /* DetailViewController.swift in Sources */,
 			);
@@ -375,12 +369,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -427,12 +423,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -471,8 +469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bilalarslan.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TableView;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -487,8 +484,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bilalarslan.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TableView;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -511,8 +507,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bilalarslan.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableView.app/TableView";
 			};
 			name = Debug;
@@ -532,8 +527,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bilalarslan.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableView.app/TableView";
 			};
 			name = Release;
