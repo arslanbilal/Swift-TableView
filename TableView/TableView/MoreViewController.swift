@@ -15,8 +15,16 @@ class MoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        setupUI()
         let url: URL = URL(string: "https://github.com/arslanbilal")!
         webView.loadRequest(URLRequest(url: url))
     }
+}
+
+extension MoreViewController {
+
+    func setupUI() {
+        view.backgroundColor = .white
+    }
+
 }

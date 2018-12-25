@@ -19,9 +19,11 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = recipe?.name
-        imageView.image = UIImage(named: recipe!.thumbnails)
-        nameLabel.text = recipe!.name
-        prepTime.text = "Prep Time: " + recipe!.prepTime
+        if let recipe = recipe {
+            navigationItem.title = recipe.name
+            imageView.image = UIImage(named: recipe.thumbnails)
+            nameLabel.text = recipe.name
+            prepTime.text = "Prep Time: " + recipe.prepTime
+        }
     }
 }
