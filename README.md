@@ -1,9 +1,9 @@
 ## Swift-TableView-Example
 
-Simple `UITableView` application with Swift(4.2) Language.
+Simple `UITableView` application with Swift(5.0) Language.
 
 ## Requirements
-- Xcode 10+
+- Xcode 10.2+
 - iOS 10+
 
 #### Screenshots of App
