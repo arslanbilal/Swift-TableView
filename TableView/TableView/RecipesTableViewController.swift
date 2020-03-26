@@ -15,7 +15,27 @@ class RecipesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+
+        // Load recipe data from defaults
+        DispatchQueue.global().async {
+            let storedRecipesJSON = UserDefaults.init(suiteName: "Recipes defaults")?.string(forKey: "Recipes")
+            if let storedRecipesString = storedRecipesJSON {
+                let storedRecipesData = storedRecipesString.data(using: .utf8)!
+                var storedRecipes: [Recipe]
+                do {
+                    try storedRecipes = JSONDecoder().decode([Recipe].self, from: storedRecipesData)
+                    self.recipes = storedRecipes
+                } catch {
+                    let alert = UIAlertController(title: "Error Loading Recipes", message: "Error Loading Recipes: \(error)", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+            // Set up table after loading
+            DispatchQueue.main.sync {
+                self.setupUI()
+            }
+        }
     }
 
     // MARK: Segue Method
@@ -23,7 +43,8 @@ class RecipesTableViewController: UITableViewController {
         if segue.identifier == "recipeDetail",
             let indexPath = tableView?.indexPathForSelectedRow,
             let destinationViewController: DetailViewController = segue.destination as? DetailViewController {
-            destinationViewController.recipe = recipes[indexPath.row]
+            destinationViewController.recipes = recipes
+            destinationViewController.recipeIndex = indexPath.row
         }
     }
 

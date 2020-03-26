@@ -20,22 +20,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cm1-Ph-Arw">
-                                <rect key="frame" x="16" y="70" width="100" height="100"/>
+                                <rect key="frame" x="16" y="64" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="FgV-FJ-0Ch"/>
                                     <constraint firstAttribute="height" constant="100" id="G3b-jz-De2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIg-7l-Wa7">
-                                <rect key="frame" x="128" y="70" width="456" height="20.5"/>
+                                <rect key="frame" x="128" y="64" width="231" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.82877155619999998" green="0.26912715970000001" blue="0.39167565110000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWt-jm-2RC">
-                                <rect key="frame" x="128" y="100.5" width="456" height="18"/>
+                                <rect key="frame" x="128" y="94.5" width="231" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSs-mG-0kT">
+                                <rect key="frame" x="16" y="173" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <state key="normal" title="Not Cooked"/>
+                                <connections>
+                                    <action selector="cookedAction" destination="E5n-Jc-20r" eventType="touchUpInside" id="dTA-Ns-Qfc"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LAs-SR-d5r">
+                                <rect key="frame" x="16" y="237" width="343" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="?"/>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                    <segment title="5"/>
+                                </segments>
+                                <connections>
+                                    <action selector="ratingAction" destination="E5n-Jc-20r" eventType="valueChanged" id="5n1-yC-00Y"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SD5-iB-zVs">
+                                <rect key="frame" x="163" y="211" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -53,9 +83,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="vPY-ro-KfX"/>
                     <connections>
+                        <outlet property="cookedButton" destination="SSs-mG-0kT" id="jux-lY-4MT"/>
                         <outlet property="imageView" destination="cm1-Ph-Arw" id="BfF-Tx-4eb"/>
                         <outlet property="nameLabel" destination="qIg-7l-Wa7" id="6cl-8I-nj5"/>
                         <outlet property="prepTime" destination="cWt-jm-2RC" id="WXe-hD-949"/>
+                        <outlet property="ratingControl" destination="LAs-SR-d5r" id="Kpq-zE-ZeZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTa-eW-Apr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -79,13 +111,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FPH-HR-pbn">
-                                            <rect key="frame" x="20" y="11" width="34" height="28"/>
+                                            <rect key="frame" x="16" y="11" width="34" height="28"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="34" id="YYE-lW-KQB"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prep Time: 12m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17t-Md-HgY">
-                                            <rect key="frame" x="71" y="29" width="490" height="15"/>
+                                            <rect key="frame" x="67" y="29" width="273" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="15" id="R4D-4F-BAT"/>
                                             </constraints>
@@ -94,9 +126,23 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yL0-KX-chv">
-                                            <rect key="frame" x="71" y="11" width="490" height="18"/>
+                                            <rect key="frame" x="67" y="11" width="273" height="18"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" red="0.8287715562458694" green="0.26912715969414547" blue="0.39167565107345581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cooked: No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkk-xw-wpM">
+                                            <rect key="frame" x="182" y="29" width="67" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU3-DE-zh1">
+                                            <rect key="frame" x="262" y="29" width="117" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -113,8 +159,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cookedLabel" destination="qkk-xw-wpM" id="m3g-Ov-tC3"/>
                                     <outlet property="nameLabel" destination="yL0-KX-chv" id="uXd-Sb-Cph"/>
                                     <outlet property="prepTimeLabel" destination="17t-Md-HgY" id="V2b-dZ-dEg"/>
+                                    <outlet property="ratingLabel" destination="lU3-DE-zh1" id="74H-HH-iGy"/>
                                     <outlet property="thumbnailImageView" destination="FPH-HR-pbn" id="CeB-ZK-RsU"/>
                                     <segue destination="E5n-Jc-20r" kind="show" identifier="recipeDetail" id="m5X-sR-d0Y"/>
                                 </connections>
@@ -129,7 +177,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3A8-Jz-7qe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1943" y="-924"/>
+            <point key="canvasLocation" x="1941.5999999999999" y="-924.28785607196414"/>
         </scene>
         <!--More-->
         <scene sceneID="iKD-G5-AiO">
