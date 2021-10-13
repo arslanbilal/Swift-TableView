@@ -10,7 +10,6 @@
 		0C8E332921D276CA009CBC9D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8E332821D276CA009CBC9D /* Recipe.swift */; };
 		771637C31C832B18003AF113 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771637C21C832B18003AF113 /* RecipesTableViewController.swift */; };
 		771ED63E19E9EF87002F3A01 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771ED63D19E9EF87002F3A01 /* DetailViewController.swift */; };
-		77327A2919EA812B0054ED2B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77327A2819EA812B0054ED2B /* MoreViewController.swift */; };
 		7761236919E8B91900EA359D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761236819E8B91900EA359D /* AppDelegate.swift */; };
 		7761236E19E8B91900EA359D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7761236C19E8B91900EA359D /* Main.storyboard */; };
 		7761237019E8B91900EA359D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7761236F19E8B91900EA359D /* Images.xcassets */; };
@@ -49,7 +48,6 @@
 		0C8E332821D276CA009CBC9D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		771637C21C832B18003AF113 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		771ED63D19E9EF87002F3A01 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		77327A2819EA812B0054ED2B /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		7761236319E8B91900EA359D /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7761236719E8B91900EA359D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7761236819E8B91900EA359D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 			children = (
 				7761236819E8B91900EA359D /* AppDelegate.swift */,
 				771ED63D19E9EF87002F3A01 /* DetailViewController.swift */,
-				77327A2819EA812B0054ED2B /* MoreViewController.swift */,
 				771637C21C832B18003AF113 /* RecipesTableViewController.swift */,
 				0C8E332721D27691009CBC9D /* Model */,
 				7761236619E8B91900EA359D /* Supporting Files */,
@@ -241,7 +238,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "Bilal ARSLAN";
 				TargetAttributes = {
 					7761236219E8B91800EA359D = {
@@ -317,7 +314,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77327A2919EA812B0054ED2B /* MoreViewController.swift in Sources */,
 				77B85BDD19E99C6E005CB58F /* TableCell.swift in Sources */,
 				7761236919E8B91900EA359D /* AppDelegate.swift in Sources */,
 				0C8E332921D276CA009CBC9D /* Recipe.swift in Sources */,
@@ -380,6 +376,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -404,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -435,6 +432,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -452,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -467,7 +465,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/TableView/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bilalarslan.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TableView;
@@ -482,7 +480,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/TableView/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bilalarslan.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TableView;

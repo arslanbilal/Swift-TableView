@@ -3,8 +3,8 @@
 Simple `UITableView` application with Swift(5.0) Language.
 
 ## Requirements
-- Xcode 10.2+
-- iOS 10+
+- Xcode 13+
+- iOS 12+
 
 #### Screenshots of App
 <img src="ScreenShots/img1.png" height="542" width="250">&nbsp;
