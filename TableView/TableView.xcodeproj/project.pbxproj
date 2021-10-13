@@ -110,6 +110,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		775298A0271781B3007C5E0B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				771ED63D19E9EF87002F3A01 /* DetailViewController.swift */,
+				771637C21C832B18003AF113 /* RecipesTableViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		7761235A19E8B91800EA359D = {
 			isa = PBXGroup;
 			children = (
@@ -132,11 +141,10 @@
 			isa = PBXGroup;
 			children = (
 				7761236819E8B91900EA359D /* AppDelegate.swift */,
-				771ED63D19E9EF87002F3A01 /* DetailViewController.swift */,
-				771637C21C832B18003AF113 /* RecipesTableViewController.swift */,
 				0C8E332721D27691009CBC9D /* Model */,
-				7761236619E8B91900EA359D /* Supporting Files */,
 				770D5F621B6775C90012AB79 /* Views */,
+				775298A0271781B3007C5E0B /* Scenes */,
+				7761236619E8B91900EA359D /* Supporting Files */,
 			);
 			path = TableView;
 			sourceTree = "<group>";

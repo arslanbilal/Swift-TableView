@@ -10,8 +10,8 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController {
 
-    var recipes = Recipe.createRecipes()
-    let identifier: String = "tableCell"
+    private var recipes = Recipe.createRecipes()
+    private let cellIdentifier: String = "tableCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class RecipesTableViewController: UITableViewController {
 
 extension RecipesTableViewController {
 
-    func setupUI() {
+    private func setupUI() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
         navigationItem.title = "Recipes"
         tableView.reloadData()
@@ -48,7 +48,7 @@ extension RecipesTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? TableCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? TableCell {
             cell.configurateTheCell(recipes[indexPath.row])
             return cell
         }
